@@ -754,9 +754,9 @@ def main():
     # update the progress_bar if load from checkpoint
     progress_bar.update(completed_steps)
 
+    total_loss = 0
     for epoch in range(starting_epoch, args.num_train_epochs):
         model.train()
-        total_loss = 0
         if (
             args.resume_from_checkpoint
             and epoch == starting_epoch
